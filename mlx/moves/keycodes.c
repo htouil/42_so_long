@@ -32,7 +32,10 @@ int	destroy_game(t_axe *axe)
 	mlx_destroy_window(axe->win.mlx, axe->win.mlx_win);
 	free_tmp(axe->matrix, axe);
 	if (axe->check_c == 0)
+	{
+		write (1, "Congratulations!\n", 17);
 		exit(0);
+	}
 	exit(1);
 	return (0);
 }

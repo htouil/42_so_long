@@ -33,6 +33,8 @@ char	*ft_strjoin(char *str1, char *str2)
 	if (!str1)
 	{
 		str1 = malloc(1 * sizeof(char));
+		if (!str1)
+			exit (1);
 		str1[0] = '\0';
 	}
 	joined = malloc((ft_strlen(str1) + ft_strlen(str2) + 1) * sizeof(char));

@@ -16,7 +16,6 @@
 //libraries
 # include <unistd.h>
 # include <fcntl.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <mlx.h>
 
@@ -68,13 +67,14 @@ int		ft_strlen(char *str);
 int		ft_strchr_nl(char *searched);
 
 //libft functions:
+void	*ft_calloc(size_t count, size_t size);
 char	*ft_itoa(int n);
 char	**ft_split(char *s, char c);
 
 //so_long functions:
 void	get_map_matrix(int fd, t_axe *axe);
 int		check_map_extension(char *str);
-int		check_double_nl(char *map_str);
+int		check_double_nl(char *lgmap);
 int		check_map_frame1(t_axe *axe);
 int		check_map_frame2(t_axe *axe);
 int		check_map_content(t_axe *axe);

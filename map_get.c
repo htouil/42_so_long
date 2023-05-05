@@ -29,11 +29,13 @@ void	get_map_matrix(int fd, t_axe *axe)
 
 	line = get_next_line(fd);
 	if (!line)
-		return ;
+	{
+		write (1, "Error\nFile is empty!\n", 21);
+		exit (1);
+	}
 	axe->columns = ft_strlen(line) - 1;
-	map_str = malloc(1 * sizeof(char));
-	map_str[0] = '\0';
 	axe->rows = 0;
+	map_str = ft_calloc(1, 1);
 	while (1)
 	{
 		map_str = ft_strjoin(map_str, line);
@@ -43,7 +45,6 @@ void	get_map_matrix(int fd, t_axe *axe)
 		if (!line)
 			break ;
 	}
-	free(line);
 	display_dnl_error(map_str);
 	axe->matrix = ft_split(map_str, '\n');
 	free(map_str);

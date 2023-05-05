@@ -34,7 +34,10 @@ int	main(int ac, char **av)
 	t_axe	axe;
 
 	if (ac != 2)
+	{
+		write (1, "Error\nThe number of arguments passed is incorrect!\n", 51);
 		return (1);
+	}
 	test_errors(av[1], &axe);
 	put_images_onmap(&axe);
 	return (0);

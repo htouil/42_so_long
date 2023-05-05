@@ -1,24 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_extension.c                                  :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htouil <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 20:03:19 by htouil            #+#    #+#             */
-/*   Updated: 2023/04/24 20:03:20 by htouil           ###   ########.fr       */
+/*   Created: 2023/04/26 20:42:58 by htouil            #+#    #+#             */
+/*   Updated: 2023/04/26 20:42:59 by htouil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	check_map_extension(char *filename)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	int	i;
+	size_t	i;
 
-	i = ft_strlen(filename) - 1;
-	if (filename[i] == 'r' && filename[i - 1] == 'e' && filename[i - 2] == 'b'
-		&& filename[i - 3] == '.')
-		return (1);
-	return (0);
+	i = 0;
+	while (i < len)
+	{
+		*((unsigned char *)(b + i)) = c;
+		i++;
+	}
+	return (b);
+}
+
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, '\0', n);
+}
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*ptr;
+
+	ptr = (void *)malloc(count * size);
+	if (ptr)
+		ft_bzero(ptr, count * size);
+	return (ptr);
 }

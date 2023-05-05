@@ -14,7 +14,7 @@ NAME 	= so_long
 
 SRCS 	= so_long.c map_get.c \
 		get_next_line/get_next_line.c get_next_line/get_next_line_utils.c \
-		libft_utils/ft_itoa.c libft_utils/ft_split.c \
+		libft_utils/ft_itoa.c libft_utils/ft_split.c libft_utils/ft_calloc.c \
 		parser/check_extension.c parser/check_frame.c parser/check_mtx_components.c \
 		parser/check_path.c parser/check_tmp_components.c parser/print_errors.c \
 		mlx/create_images.c mlx/put_images.c \
